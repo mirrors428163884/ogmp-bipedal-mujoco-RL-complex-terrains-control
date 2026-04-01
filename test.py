@@ -173,7 +173,7 @@ if __name__ == '__main__':
 
     # load the policy
     print("\ntesting experiment:",tstng_conf['exp_log_path'])
-    policy = torch.load(os.path.join(tstng_conf['exp_log_path'],'actor.pt'))
+    policy = torch.load(os.path.join(tstng_conf['exp_log_path'],'actor.pt'),weights_only=False)
 
 
     # run n episodes
