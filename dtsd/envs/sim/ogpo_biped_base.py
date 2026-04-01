@@ -84,7 +84,7 @@ class ogpo_biped_base:
     if 'mode_encoder' in self.exp_conf.keys():
         self.exp_conf['mode_encoder']['model_path'] = os.path.join(EXP_DIR_PATH,
                                                           self.exp_conf['mode_encoder']['model_path'])
-        model = torch.load(self.exp_conf['mode_encoder']['model_path'],map_location=torch.device('cpu'))
+        model = torch.load(self.exp_conf['mode_encoder']['model_path'],map_location=torch.device('cpu'),weights_only=False)
         self.mode_enc = model.encoder
         # to save re-computing latent from the ae for obs
         self.curr_mode_latent = None
